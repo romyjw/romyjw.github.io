@@ -83,7 +83,7 @@ p {
 }
 
 .navbar {
-    background-color: #fa3916;
+    background-color: #202020;
     position: fixed; /* Make the navbar stick to the top */
     top: 0;
     left: 0;
@@ -124,7 +124,7 @@ p {
 }
 
 .navbar li a:hover, .navbar .dropdown:hover .dropbtn {
-    background-color: #21B8D2;
+    background-color: #fa3916;
 }
 
 .navbar li.dropdown {

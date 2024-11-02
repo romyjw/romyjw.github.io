@@ -29,7 +29,7 @@ function handleKeyPress(event) {
     
     pressedKeys.add(event.key.toLowerCase());
     
-    if (!isAnimating && pressedKeys.has('e') && pressedKeys.has('g') ) {
+    if (!isAnimating && pressedKeys.has('r') && pressedKeys.has('w') ) {
         triggerEggScript();
     }
     

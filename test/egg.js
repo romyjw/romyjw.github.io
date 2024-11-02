@@ -42,7 +42,7 @@ let spokeRotationAngle = 0; // Angle to rotate the spokes
 let spokeCount = 16;
 let spokeAngleIncrement = (2 * pi) / spokeCount; // Angle between spokes
 
-const COLOUR1 = 'rgb(33, 184, 210)'; //turquoise
+const COLOUR1 = 'rgb(250, 57, 22)'; //red-orange
 
 // const COLOUR3 = 'rgb(150, 150, 150)'; // pale grey
 const COLOUR3 = 'rgb(64,64,64)'; // dark grey

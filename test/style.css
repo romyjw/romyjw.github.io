@@ -37,9 +37,7 @@ body {
     margin: 10px auto;
     display: block; /* Prevents space under the image */
     width: auto; /* Allows the image width to scale correctly */
-    padding-left:73px ;
-    padding-top:0px;
-    padding-bottom:0px;
+padding: 0;
 }
         
 .footer-container canvas {
@@ -93,7 +91,7 @@ p {
 
 .navbar hr {
     border: none;
-    border-top: 7px solid black;
+    border-top: 3px solid #fa3916;
     margin: 0px 0;
     padding: 0px 0px;
 }
@@ -106,11 +104,15 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
+    height: 50px;
+    
+    transition: height 0.3s ease, width 0.3s ease; /* Smooth transition for size change */
 }
 
 .navbar li {
     display: inline;
+    
+    transition: height 0.3s ease, width 0.3s ease, padding 0.3s ease, margin 0.3s ease; /* Smooth transition for size change */
 }
 
 .navbar li a, .dropbtn {
@@ -118,17 +120,47 @@ p {
     color: white;
     text-align: center;
     /* padding: 29px 28px; */
-    padding: 29px 10px;
+    padding: 15px 10px;
     text-decoration: none;
     line-height: 1.5;
+    
+    transition: height 0.3s ease, width 0.3s ease; /* Smooth transition for size change */
 }
 
 .navbar li a:hover, .navbar .dropdown:hover .dropbtn {
-    background-color: #fa3916;
+     background-color: #fa3916;
+    
+    /* padding-left: 15px;
+    padding-right: 15px;
+    
+    transition: padding-left 0.3s ease, padding-right 0.3s ease; /* Smooth transition for size change */
+    
+    */
+    
+    
+    
+    /* margin-left: 15px;
+    margin-right: 15px;
+    
+    transition: margin-left 0.3s ease, margin-right 0.3s ease; /* Smooth transition for size change */
+    */
 }
+
+/*
+.navbar .dropdown:hover {
+     background-color: #fa3916;
+    
+    padding-left: 20px;
+    transition: padding-left 0.3s ease;
+}
+*/
+
+
 
 .navbar li.dropdown {
     display: inline-block;
+    
+    transition: height 0.3s ease, width 0.3s ease; /* Smooth transition for size change */
 }
 
 .navbar .dropdown-content {
@@ -157,21 +189,34 @@ p {
 }
 
 .home-icon {
-    height: 65px;
+    height: 50px;
     width: auto;
     vertical-align: middle;
-    transition: height 0.3s ease, width 0.3s ease; /* Smooth transition for size change */
+    transition: height 0.3s ease, width 0.3s ease, padding 0.3s ease, margin 0.3s ease; /* Smooth transition for size change */
 }
+
+
+
+
 
 .home-icon:hover {
     padding: 0; /* Remove padding for the home button */
-    height: 75px; /* Increase the size on hover */
+    height: 50px; /* Increase the size on hover */
     width: auto;  /* Maintain the aspect ratio */
+    padding-left:10px;
+    padding-right:0px;
 }
 
 /* Add specific class for home button */
 .navbar .home-button a {
     padding: 0; /* Remove padding for the home button */
+}
+
+.navbar .home-button {
+    background-color: #202020;
+}
+.navbar .home-button:hover {
+    background-color: #202020;
 }
 
 /* Hamburger menu styles */
@@ -247,9 +292,19 @@ p {
         text-align: left;
         border-bottom: 1px solid #ddd;
     }
+    
 }
 
-    
+
+#grad1 {
+  height: 3px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    }
+
+
+
+
 .twocolumn .rowlist {
             list-style-type: none;
             padding: 0;

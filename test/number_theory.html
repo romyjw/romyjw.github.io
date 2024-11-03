@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romy Williamson</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="../images/icon2.png" type="image/png">
+
+</head>
+
+
+<div id="navbar"></div>
+<script src="fetch-navbar.js"></script>
+<body>
+
+<hr>
+<header><h1>Mechanical Number Theory</h1></header>
+<hr>
+<div class="defaultpage">
+<p>Mechanical Number Theory is interesting to me because I am a very visual thinker and I love to make the abstract concrete. I think there is often, (always?) something to be gained by finding a new visualisation/ thought experiment which makes an abstract concept self-evident.</p>
+
+
+<h2>Cicadas?</h2>
+
+<h2>Fermat's Little Theorem With Bracelets</h2>
+<p>It isn't really mechanical, but my favourite proof of Fermat's Little Theorem is one of these cases where quite an abstract concept becomes almost self-evident when viewed from a certain perspective.</p>
+<p>Because the proof is so intuitive, I don't think you even need to know the theorem to follow it. The proof goes like this:</p>
+<ul>
+<li>Imagine that you have an unlimited supply of beads, coming in A different colours . You want to design bracelets with P beads each (where P is a prime).</li>
+<li>Now ask, how many different bead-strings can you make? The answer is A^P, because there are A options for the colour of each of the P beads, and the order matters. But, if the ends are joined up (seamlessly) to make bracelets then many of these will end up looking the same.</li>
+<li>Clearly, there are just A bead-strings that use only one colour, because there are A colours available.</li>
+<li>For a bracelet design using more than one colour, there are exactly P different bead-strings that can produce it, because the first bead could be taken to be any of the P beads, and because P is prime, there can't be any repeated patterns in the bracelet so these P bead-strings are all genuinely different.</li>
+
+<li>Therefore, the number of bead-strings using more than one colour is A^P - A, and this is a multiple of P.</li>
+<li>So, P divides A^P-A, so A^P = A mod P. This proves the theorem. :)</li>
+</ul>
+
+<h2>Chinese Remainder Theorem Army Lining Up</h2>
+Say something about the Chinese Army checking if anyone is missing on parade, and not being able to count high enough.
+<h2>Chinese Remainder Theorem Cogs</h2>
+<p>The stronger interpretation of the Chinese Remainder Theorem is about isomorphism, not about solving individual equations. So I like to imagine cogs. The idea is that, if we have N cogs ticking around, and the number of teeth on each cog is coprime, then eventually ALL of the possible teeth configurations will be reached.</p>
+<p>This is the same as saying that the product of the cyclic groups with coprime sizes is isomorphic to the big cyclic group with size equal to the product of the sizes. I think. Need to think more carefully here.</p>
+
+
+</div>
+
+<hr>
+<div class="footer-container">
+    <img src="../images/sponsor_logos.png" alt="Footer Images" >
+    <canvas id="canvas"></canvas>
+</div>
+
+</body>
+
+<script>
+    function toggleMenu() {
+      const navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('active');
+    }
+</script>
+
+<!-- Links to the external JavaScript files -->
+<script src="egg.js"></script>
+
+<script src="egg-check.js"></script>
+
+
+</html>
+
+

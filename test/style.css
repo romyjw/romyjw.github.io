@@ -81,7 +81,7 @@ p {
 }
 
 .navbar {
-    background-color: #202020;
+    background-color: #222222;
     position: fixed; /* Make the navbar stick to the top */
     top: 0;
     left: 0;
@@ -100,7 +100,7 @@ p {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #202020;
+    background-color: #222222;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,7 +128,9 @@ p {
 }
 
 .navbar li a:hover, .navbar .dropdown:hover .dropbtn {
-     background-color: #fa3916;
+     /* background-color: #fa3916; */
+     background-color: #D4145A ;
+     background-color: #FBB03B;
     
     /* padding-left: 15px;
     padding-right: 15px;
@@ -213,10 +215,10 @@ p {
 }
 
 .navbar .home-button {
-    background-color: #202020;
+    background-color: #222222;
 }
 .navbar .home-button:hover {
-    background-color: #202020;
+    background-color: #222222;
 }
 
 /* Hamburger menu styles */
@@ -229,10 +231,14 @@ p {
 
 .hamburger div {
     width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 4px 0;
+    height: 2px;
+    background-color: #adadad;
+    margin: 5px 0;
+            transition: all 0.5s ease-out;
 }
+
+
+
 
 /* Logo container styles */
 .logo-container {
@@ -273,6 +279,7 @@ p {
 
     .navbar li {
         display: block;
+
     }
 
     .hamburger {
@@ -286,6 +293,27 @@ p {
     .navbar.active .logo-container{
         display: none; /* Show logo when hamburger is active */
     }
+    
+/* Active state transformations for each bar */
+.navbar.active .hamburger .hamburger_bar1 {
+    /* transform: rotate(45deg) translate(5px, 5px); */
+    /* transform: translate(-5px, -5px) rotate(225deg) ; */
+    transform: translate(0px, 12px) rotate(225deg) ;
+}
+
+.navbar.active .hamburger .hamburger_bar2 {
+    background:transparent;
+}
+
+.navbar.active .hamburger .hamburger_bar3 {
+    
+    /* transform: rotate(-45deg) translate(7px, -8px); */
+    /* transform: translate(-7px, 6px) rotate(-225deg) ; */
+    transform: translate(0px, -12px) rotate(-225deg) ;
+}
+
+    
+
 
     .navbar li a {
         padding: 10px;
@@ -301,7 +329,18 @@ p {
   background-color: red; /* For browsers that do not support gradients */
   background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
     }
+    
+#grad2 {
+  height: 3px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, #D4145A , #FBB03B, #D4145A , #FBB03B, #D4145A , #FBB03B);
+    }
 
+#grad3 {
+  height: 3px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to left, #D4145A , #FBB03B, #D4145A , #FBB03B, #D4145A , #FBB03B);
+    }
 
 
 

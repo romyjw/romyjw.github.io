@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romy Williamson</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="../images/icon2.png" type="image/png">
+
+</head>
+
+
+<div id="navbar"></div>
+<script src="fetch-navbar.js"></script>
+<body>
+
+<hr>
+<header><h1>An Automatic Canon</h1></header>
+<hr>
+<div class="defaultpage">
+
+<h2>Canons</h2>
+<p>Say something about the Crab Canon, and the GEB book.</p>
+<h2>Desmos</h2>
+<p>When I was ill in bed earlier this year, I found out that my favourite easy-to-use online graphing calculator has introduced a SOUND feature, and I was incredibly excited. So I spent my convalescence writing the Frere Jacque function, with automatic transposition into major and minor keys. You can then play the Frere Jacque function forwards and backwards, superposed with itself and translated. I.e., all the most common variations of a canon. The plan was to also do the Crab Canon. But this method of transcription is... quite tedious, and I never got around to it.</p>
+<p>Play the <a href="https://www.desmos.com/calculator/vhbw3oxmyj">automatic Frere Jacque Canon</a> for yourself!</p>
+
+
+</div>
+
+<hr>
+<div class="footer-container">
+    <img src="../images/sponsor_logos.png" alt="Footer Images" >
+    <canvas id="canvas"></canvas>
+</div>
+
+</body>
+
+<script>
+    function toggleMenu() {
+      const navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('active');
+    }
+</script>
+
+<!-- Links to the external JavaScript files -->
+<script src="egg.js"></script>
+
+<script src="egg-check.js"></script>
+
+
+</html>
+
+

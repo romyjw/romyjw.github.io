@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romy Williamson</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="../images/icon2.png" type="image/png">
+
+</head>
+
+
+<div id="navbar"></div>
+<script src="fetch-navbar.js"></script>
+<body>
+
+<hr>
+<header><h1>Equal Temperament is a Lie</h1></header>
+<hr>
+<div class="defaultpage">
+
+
+<h2>Just Intonation</h2>
+<p>Harmony is all about ratios. This has been known, since Pythagoras and probably much before.</p>
+<p>We can write out all of the notes of the major scale as simple fractions of the base note's frequency:</p>
+<ul>
+<li>C (identity): 1</li>
+<li>D (up a tone): 9/8</li>
+<li>E (up a major third): 5/4</li>
+<li>F (up a fourth): 4/3</li>
+<li>G (up a fifth): 3/2</li>
+<li>A (up a major sixth): 5/3</li>
+<li>B (up a major seventh): 15/8</li>
+<li>C (up an octave): 2</li>
+</ul>
+
+
+<p>In the time before <i>The Well Tempered Clavier</i>, this was all well and good, <i>except</i> for when people wanted to play their instruments in a different key. They couldn't, or it sounded s**t, because the notes of a C major and minor scale in just intonation are literally different notes to the notes in a different scale - not just a permutation of the same 12 notes. </p>
+<p>If you need convincing of that, check the ratios. Clearly, the ratio that takes you from D to E in the C major scale is (5/4)/(9/8) = 10/9, which is different (although quite close) to 9/8. So the interval from D to E is different from the interval from C to D, so the 'E' that we need for the D major scale is different from the 'E' that we've got from the C major scale. Oh no...</p>
+
+<h2>Equal Temperament</h2>
+<p>Then someone came along and invented Equal Temperament. Basically, that means they adjusted each of the notes in the C major scale a bit, so that each of the 'tones' are represented by the same frequency ratio. They wanted to keep an octave as 2/1. There are 12 semitones in an octave. So if all the semitones are equal, then their frequency ratio is fully determined: it's 2^(1/12). The updated C major scale now becomes:</p>
+
+<ul>
+<li>C (identity): 1</li>
+<li>D (up a tone): 2^(2/12) = 2^(1/6)</li>
+<li>E (up a major third): 2^(4/12) = 2^(1/3)</li>
+<li>F (up a fourth): 2^(5/12)</li>
+<li>G (up a fifth): 2^(7/12)</li>
+<li>A (up a major sixth): 2^(9/12) = 2^(3/4)</li>
+<li>B (up a major seventh): 2^(11/12)</li>
+<li>C (up an octave): 2</li>
+</ul>
+
+
+
+<h2>Lie Number 1: There is No Harmony</h2>
+<p>We are used to hearing equal temperament everywhere, because that's how modern keyboards are tuned, and that's how woodwind instruments have to be tuned if they're going to be able to play in different keys. But it's kind of wrong - pure, rational ratios are the most pleasing to the ear, for physics reasons... resonance? And <i>none</i> of those intervals, except for the identity and the octave, are rational :( . </p>
+
+<p>We can actually tabulate the error:</p>
+<p>You can see that some of the intervals like a fifth are pretty close to the just intonation version, but others (a seventh...) are <i>totally</i> off!</p>
+
+<p>As an aside though, I want to make you see and hear the difference, not just looking at the numbers.</p>
+<p>When I was a teenager, I played the cello and usually, you tune a cello using harmonics. You can play the same harmonic on two of the strings, and you adjust the tuning until the pitches match. Playing very similar pitches one after the other, it can be hard to tell how well you're doing. But if you play them at the same time, my cello teacher taught me that you can hear 'beats' (that is, the increase and decrease in volume as the sound waves fall in and out of phase). If the pitches (frequencies) are identical, there are no beats at all, and as you tune the strings to make the pitches closer together, the beats become slower and slower. </p>
+<p>In <a href="https://www.desmos.com/calculator/duzgkfmzle">this demonstration</a>, I overlay the sound waves for the just intonation and equal temperament notes of the scale, and I also play the sound waves! You can both see and hear the beats in the composed sound waves, and you can clearly see and hear that some of the equal temperament intervals (e.g. the fifth) have much lower discrepancy (slower beats) than other intervals (e.g. the seventh). The seventh, in fact, is so bad that it is audibly dissonant.</p>
+
+
+<h2>Lie Number 2: The Circle of Fifths</h2>
+<p>The Circle of Fifths is the music theory concept that if you start on any note, and go up a fifth, and repeat this, you eventually cycle through all of the notes and you are back to where you started, in a higher octave (in theory... it will definitely be out of my singing range). </p>
+<p>E.g. if you start on a C, and keep on going up in fifths, you will eventually get: C -> G -> D -> ... -> F -> C .</p>
+<p>The Circle of Fifths has 12 notes. It looks like a clock.</p>
+<p>Let's just check that it works. In just intonation, a fifth corresponds to the ratio 3/2. Now, going up a fifth 12 times corresponds to a ratio of (3/2)^12 ~ 129.746337891. But wait - that's not an integer :'( . To be the same note in a different octave, the frequency ratio needs to be a power of two. It's quite close to a power of two (2^7 = 128) but it isn't. So, the circle of fifths is a lie, in just intonation.</p>
+<p>However, the Circle of Fifths does work in Equal Temperament, because (2^(7/12))^12 = 2^7 = 128. So going up by an equal temperament fifth, 12 times, does take you back to the same note of the scale.</p>
+
+
+
+<h2>Conclusion</h2>
+<p>In conclusion, the options are:</p>
+<ul>
+ <li>Just Intonation: to play harmonious sounds, but in one key only, never changing key or playing with differently tuned instruments, and not have a circle of fifths, or,</li>
+ <li>Equal Temperament: to make every interval except the octaves sound slightly, irritatingly off, and throw away the beautiful theory of harmonics, but transpose to your heart's content and jump around keys all you like knowing that the Circle of Fifths will never fail you. </li>
+</ul>
+
+<p>The consensus for produced music is usually Equal Temperament but it's not perfect. It isn't strictly followed. There is no perfect solution, and it upsets me very deeply. Western music is all a lie.</p>
+
+
+</div>
+
+<hr>
+<div class="footer-container">
+    <img src="../images/sponsor_logos.png" alt="Footer Images" >
+    <canvas id="canvas"></canvas>
+</div>
+
+</body>
+
+<script>
+    function toggleMenu() {
+      const navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('active');
+    }
+</script>
+
+<!-- Links to the external JavaScript files -->
+<script src="egg.js"></script>
+
+<script src="egg-check.js"></script>
+
+
+</html>
+
+

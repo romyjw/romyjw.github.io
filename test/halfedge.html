@@ -48,6 +48,7 @@
 <header><h2>Something Cool: Dual Meshes</h2></header>
 <p>A cool thing I discovered when I was first exploring half-edge meshes, is that if you replace the pointer to the `next' halfedge with the pointer to the `opposite.next' halfedge, for all the halfedges (and keep the `opposite' pointer the same), this immediately gives you the halfedge mesh data structure of the dual mesh!</p>
 <p>This was definitely not obvious to me at the time, but hindsight has made it clearer. It's best understood in terms of what I said above about traversing around a vertex and traversing around a face. In a dual mesh, the edge positions stay the same (imagine pivoting them by 90 degrees around their midpoint) but every face gets replaced by a vertex, and every vertex gets replaced by a face. The effect of replacing the `next' pointers by the `opposite.next' pointers is to replace `face-traversal' by `vertex-traversal'. If we did that twice, then the `next' pointer would become the `opposite.opposite.next' pointer, which is just the `next' pointer. So the second time, `vertex-traversal' must turn back into `face-traversal'... This means that our operation both turns faces into vertices, and vertices into faces, so it does everything that the `dual' operation should do.</p>
+
 <div class="image_container">
 <img src="../images/duals.png" alt="Dual Meshes" class="normal-image">
 </div>
@@ -81,7 +82,13 @@
 \end{matrix}.
 \]
 </p>
-<img src="../images/triangle.jpeg" alt="Doubled-Over Triangle Halfedge Mesh Structure" >
+
+<div class="image_container">
+<img src="../images/triangle.jpeg" alt="Doubled-Over Triangle Halfedge Mesh Structure" class="normal-image">
+</div>
+
+
+
 
 <header><h2>Orbits</h2></header>
 <p>In the `group action' perspective, the orbits of various subgroups of \( G \) give us insight into what sort of mesh the `group action' is describing.</p>

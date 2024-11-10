@@ -7,24 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" href="../images/icon2.png" type="image/png">
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<style>
-    /* Container styles */
-    .image-container {
-        display: flex;
-        justify-content: center; /* Centers image horizontally */
-        align-items: center;     /* Centers image vertically */
-        width: 100%;             /* Full width of parent */
-        height: auto;
-        margin: auto;            /* Centers the container if it has a limited width */
-    }
-    
-    /* Image styles */
-    .normal-image {
-        width: 50%;              /* Adjusts image width to 50% of the container */
-        height: auto;            /* Maintains aspect ratio */
-        display: block;
-    }
-</style>
+
 
 </head>
 
@@ -101,25 +84,45 @@
 
 <li><i>(Included for completeness): </i>The orbits of the subgroup \( \left<  \text{opp}  \right> \) acting on \( H \) (via \( \alpha \)) are the pairs of halfedges that make up edges.</li>
 </ul>
+<p>All of these statements remains true if we replace \( G \) by \(   G / \text{ker}(\alpha )  \) - where
+\( \ker(\alpha) = \{ g \in G \mid \alpha (g , h) = h \text{ for all } h \in H \}. \) i.e. we can identify the elements of \( G \) that have the same effect on \( H \) under the group action \( \alpha \).</p>
 
 
 <header><h2>Speculations</h2></header>
-<p>The following section provides an attempt at an alternative way to look at the `dual halfedge mesh' construction that I showed above.</p>
+<p>I am confident about what I have said so far. The final section is, as the title suggests, a work in progress.</p>
+<p>In this section, I show more formal way to look at the `dual halfedge mesh' construction that I showed above, and I try to fit it into a broader class of 'mesh constructions' that convert a halfedge mesh into another halfedge mesh.</p>
 <p>Suppose we have a set of halfedges \( H = \{h_{00}, h_{01}, h_{10}, h_{11}, ..., h_{(n-1)0}, h_{(n-1)1} \} \), and we know how the group \( G \) acts on \( H \) via the group action \( \alpha \). The group action \( \alpha \) contains all the information to reconstruct a particular halfedge mesh.</p>
 <p>A reasonable question to ask is, can other group actions be derived from \( \alpha\)?</p>
-<p>Precisely, is there a group action \( \beta : G \times H \rightarrow H \) such that \( \beta(g, h) = \alpha(\phi(g), h)  \) for some permutation (relabelling/reindexing) \( \phi \) of the group elements in \( G \)?</p>
+<p>Precisely, is there a group action \( \beta : G \times H \rightarrow H \) such that \( \beta(g, h) = \alpha(\phi(g), h)  \) for some permutation (relabelling/reindexing) \( \phi \) of the group elements in \( G / \text{ker}(\alpha) \)?</p>
+<!--<p>Additionally, at least for now, I will assume that \( \text{ker}(\alpha) = \{ e \} \) or if not, I will replace </p>-->
 <hr style="border-top: dotted 1px;" />
 <p>Using the compatibility condition on \( \beta(g_1, \beta(g_2,h)) \), we can show that \[  \alpha(\phi(g_1 g_2), h) = \alpha(\phi(g_1)\phi(g_2), h)   \] for all \( g_1,g_2 \in G\) and all \( h \in H\).<p>
 <p>Also, from the identity condition on \( \beta \) we have \[  \alpha(\phi(e), h) = \beta(e,h) = h  \].</p>
-<p>So, assuming injectivity of \( \alpha \) on \( G \times H\) <i>(is this valid? why? wait it's only because it's for ALL h?)</i> then \[ \phi(g_1)\phi(g_2)=\phi(g_1 g_2)\text{and}\phi(e)=e. \] So, \( \phi \) must be a group homomorphism.</p>
+<p>Then, in the quotient group \( G / \text{ker}(\alpha)\), we have \[ \phi(g_1)\phi(g_2)=\phi(g_1 g_2)\quad\text{and}\quad\phi(e)=e. \] So, \( \phi \) must be a group homomorphism.</p>
 
 <p>Furthermore, \( \phi \) was assumed to be a permutation (bijection), so \( \phi \) must be an <i>automorphism</i>.</p>
-<p>A group homomorphism is fully determined by its value on the group generators. So, we just need to work out the possibilities for two generators, such as \( \text{opp}\) \quad and \quad \( \text{next}\).</p>
+<p>A group homomorphism is fully determined by its value on the group generators. So, we just need to work out the possibilities for two generators, such as \( \text{opp}\) and \( \text{next}\).</p>
 <p>Now \( \phi(\text{opp})^2 = \phi(\text{opp}\circ\text{opp})=\phi(e)=e \), and \( \phi(\text{opp})\neq e\) by injectivity (since \( \phi(e)=e\)). So \( \phi(\text{opp}) \) has order exactly 2. The only element with order exactly 2 in \( G \) is \(\text{opp}\). So, \( \phi(\text{opp})=\text{opp}\).</p>
-<p>Now, since \( \phi \) is surjective, then \( \phi(g)=\text{next}\) for some \( g \in G\).</p>
-<p><i>Can I narrow it down to just a few options?</i></p>
+
+
+
+<!--<p>Now, since \( \phi \) is surjective, then \( \phi(g)=\text{next}\) for some \( g \in G\).</p>
+<p><i>Can I narrow it down to just a few options?</i></p>-->
 <!--<embed src="../resources/halfedge.pdf" type="application/pdf" width="100%" height="1000">-->
 
+<p>Now, what can \( \phi(\text{nxt})\)?</p>
+<p>If we set \( \phi(\text{nxt}) =  \text{nxt}  \), the group action \( \beta \) is the same as \( \alpha \), so the mesh is the same.</p>
+<p>If we set \( \phi(\text{nxt}) =  \text{opp}\circ\text{nxt}  \), the group action \( \beta \) now represents the dual mesh - as I have already talked about.</p>
+<p>In fact, there are some other options which also lead to the dual mesh: 
+\[ 
+\begin{matrix}
+\phi(\text{nxt}) = \text{nxt}\circ\text{opp} \\
+\phi(\text{nxt}) = \text{nxt}^{-1}\circ\text{opp} \\
+\phi(\text{nxt}) = \text{opp}\circ\text{nxt}^{-1}
+\end{matrix}
+\]</p>
+<p><i>Are these options really valid? Are there other options too? Can I set \( \phi(\text{nxt}) \) to anything I want?</i></p>
+<p><i>Next: confirm which of these really represent the dual, and whether other options also work or lead to any interesting structures.</i></p>
 
 </div>
 
@@ -128,7 +131,7 @@
 
 <hr>
 <div class="footer-container">
-    <img src="../images/sponsor_logos.png" alt="Footer Images" >
+    <img src="../images/logos.png" alt="Footer Images" >
     <canvas id="canvas"></canvas>
 </div>
 

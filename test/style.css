@@ -15,6 +15,28 @@ body {
     font-size:16px;
     }
 
+/* Center image within the .defaultpage */
+.defaultpage img {
+    display: block; /* Ensures the image takes up available space */
+    margin: 0 auto; /* Centers the image */
+    max-width: 100%; /* Ensures responsiveness */
+    height: auto; /* Maintains aspect ratio */
+}
+
+
+
+.image-container {
+    display: flex;
+    justify-content: center; /* Centers image horizontally */
+    margin: auto;            /* Centers container horizontally */
+}
+
+.normal-image {
+    width: 50%;              /* Adjusts image width to 50% of container width */
+    height: auto;            /* Maintains aspect ratio */
+    display: block;
+}
+
 
 
 

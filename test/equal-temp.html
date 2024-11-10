@@ -20,8 +20,16 @@
 <hr>
 <div class="defaultpage">
 
-
+<div class="image_container">
+<figure>
+<img src="../images/majorchordJI.png" alt="Major Chord Just Intonation" class="normal-image">
+<figcaption><small>Frequencies in One Octave of the Major Chord, in Just Intonation</small></figcaption>
+</figure>
+</div>
 <h2>Just Intonation</h2>
+
+
+
 <p>Harmony is all about ratios - at least, from the established Western Perspective. This idea is usually accredited to Pythagoras, who thought that the 'simplest' frequency ratios are the most pleasing to the ear. (He also got slightly carried away and reasoned that the Universe is harmonious so the sizes of the orbits of the planets must also satisfy simple ratios, and the planets produce an inaudible <a href="https://www.sensorystudies.org/picture-gallery/spheres_image/">Music of the Spheres</a>... he was wrong about that.)</p>
 <p>In Just Intonation, we can write out all of the notes of the major scale (e.g C major) as simple fractions of the base note's frequency:</p>
 <ul>
@@ -51,6 +59,9 @@
 <p>If you need convincing of that, check the ratios. Clearly, the ratio that takes you from D to E in the C major scale is (5/4)/(9/8) = 10/9, which is different (although quite close) to 9/8. So the interval from D to E is different from the interval from C to D, so the 'E' that we need for the D major scale is different from the 'E' that we've got from the C major scale. Oh no...</p>
 
 <h2>Equal Temperament</h2>
+<img src="../images/piano.jpg" alt="Equal Temperament Piano" class="normal-image">
+<figcaption><small>Modern Pianos are tuned in Equal Temperament (12TET)</small></figcaption>
+</figure>
 <p>In around 1580, <a href="https://en.wikipedia.org/wiki/Equal_temperament#History">someone invented Equal Temperament</a>. Basically, they adjusted each of the notes in the C major scale a bit, so that each of the 'tones' are represented by the same frequency ratio. They wanted to keep an octave as 2/1. There are 12 semitones in an octave. So if all the semitones are equal, then their frequency ratio is fully determined: it's 2^(1/12). The updated C major scale now becomes:</p>
 
 <ul>
@@ -164,6 +175,9 @@
 </div>
 <p>Let's just check that it works. In just intonation, a fifth corresponds to the ratio 3/2. Now, going up a fifth 12 times corresponds to a ratio of (3/2)^12 ~ 129.746337891. But wait - that's not an integer :'( . To be the same note in a different octave, the frequency ratio needs to be a power of two. It's quite close to a power of two (2^7 = 128) but it isn't. So, the circle of fifths is a lie, in just intonation.</p>
 <p>However, the Circle of Fifths does work in Equal Temperament, because (2^(7/12))^12 = 2^7 = 128. So going up by an equal temperament fifth, 12 times, does take you back to the same note of the scale.</p>
+<img src="../images/eqpiano.png" alt="Equal Temperament Piano" class="normal-image">
+<figcaption><small>Illustration of the Broken Circle of Fifths (<a href="https://www.derek-hasted.co.uk/faqs/equal-temperament/">link to source</a>)</small></figcaption>
+</figure>
 
 
 

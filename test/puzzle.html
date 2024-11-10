@@ -6,6 +6,25 @@
     <title>Romy Williamson</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" href="../images/icon2.png" type="image/png">
+    <style>
+     .image-container {
+            position: relative;
+            width: 100px; /* Set the width you need */
+            height: auto;
+            display: flex;
+            justify-content: center; /* Centers horizontally */
+            align-items: center;     /* Centers vertically */
+            margin: 0 auto; /* Centers the container on the page */
+        }
+        
+     .normal-image {
+ display: block;
+            width: 100%;
+            height: auto;
+            
+        }
+
+    </style>
 
 </head>
 
@@ -23,8 +42,10 @@
 
 
 <h2>Problem</h2>
-<p>Slide the following pieces into the 'room', through the 'door'. Puzzle is effectively 2D, except that we are allowed to flip the pieces (this provides extra degrees of freedom because some of the pieces are 'chiral' - aka non-superposable onto their mirror image).</p>
-
+<p>Slide the following pieces (on the left) into the 'room' (on the right), through the 'door' (bottom left of the 'room'). The puzzle is effectively 2D, except that we are allowed to flip the pieces (this provides extra degrees of freedom because some of the pieces are 'chiral' - aka non-superposable onto their mirror image).</p>
+<div class="image_container">
+<img src="../images/puzzle_setup.png" alt="Puzzle Setup" class="normal-image">
+</div>
 
 <h2>Solution Approach</h2>
 <p>Initially it seems like you would need to model complicated processes like continuous sliding. This would be hard. A much simpler problem is to find all options for the final configurations of the pieces. It turns out that if we find all possible configurations and then filter out those which obviously can't be 'slidable', we are left with only two final configurations. Then it is very intuitive for a human to complete the final step by finding the only 'sliding' solution.</p>
@@ -81,7 +102,7 @@
 
 
 <h2>Conclusion</h2>
-That's all. I have made it into an <a href="https://colab.research.google.com/drive/1trDkfvYeXnnlHbvCnlEhDVizRqYwui06">ipython notebook</a> as well though, so you can try it on different starting pieces and grids. :)
+<p>That's all. I have made it into an <a href="https://colab.research.google.com/drive/1trDkfvYeXnnlHbvCnlEhDVizRqYwui06">ipython notebook</a> as well though, so you can try it on different starting pieces and grids. :)</p>
 
 
 <hr>

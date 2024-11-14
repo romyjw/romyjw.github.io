@@ -57,7 +57,7 @@
 <ul>
     <li>Represent each piece by a binary matrix, e.g. A = np.array([[1,1,1],
               [0,1,0]]) for the T-shaped tetris piece.</li>
-    <li>For each piece, find all its possible positions in the h x w grid. Each position is encoded by a length hxw binary 'configuration vector', formed by flattening the h x w grid. For example, this configuration of piece A:
+    <li>For each piece, find all its possible positions in the h x w grid. Each position is encoded by a length hxw binary <i>configuration vector</i>, formed by flattening the h x w grid. For example, this configuration of piece A:
     \[ \left ( \begin{matrix}
     0 & 0 & 0 & 0 & 0 & 0 \\
     0 & 0 & 1 & 1 & 1 & 0 \\
@@ -67,27 +67,27 @@
     \end{matrix} \right ) \] would be encoded by this configuration vector: \[ \left ( \begin{matrix} 0 & 0 & 0 & 0 & 0 & 0 & \quad  0 & 0 & 1 & 1 & 1 & 0 \quad & 0 & 0 & 0 & 1 & 0 & 0 \quad & 0 & 0 & 0 & 0 & 0 & 0 \end{matrix} \right ) .\]
     
     
-     All the valid configurations are encoded by a ?x(hxw) 'configuration' matrix, formed by stacking the configurations vectors. The value of ? depends on both the type of piece and the grid.</li>
+     All the valid configurations are encoded by a ?x(hxw) <i>configuration matrix</i>, formed by stacking the configurations vectors. The value of ? depends on both the type of piece and the grid.</li>
     
-    <li>Define a 'zip up' function, that takes two 'configuration' matrices, A and B, and returns a 'configuration' matrix, C, for the composition of the two pieces:
+    <li>Define a <i>zip-up</i> function, that takes two configuration matrices, A and B, and returns a configuration matrix, C, for the composition of the two pieces:
         <ul>
         <li>Find the product AB^T. </li>
         <li>Each entry of AB^T counts the number of overlapping squares in the corresponding piece configurations (encoded by the rows of A and B). In particular, it is zero exactly when the piece configurations do NOT overlap. </li>
         <li>Check every entry of AB^T. For every zero-entry, add a row to C that encodes the composition of the pieces in that configuration - i.e. A[i,:] + B[j,:].</li>
-        <li>Now C has the same structure as A and B but represents all possible configurations of a <i>pair</i> of pieces.</li>
+        <li>Now C has a similar structure to A and B but represents all possible configurations of a <i>pair</i> of pieces.</li>
         </ul>
     </li>
     
-    <li>The 'zip up' function does most of the work for us. To find all joint configurations of more than two pieces, we just need to apply it repeatedly to eventually join all of the pieces together.</li>
+    <li>The zip-up function does most of the work for us. To find all joint configurations of more than two pieces, we just need to apply it repeatedly to eventually join all of the pieces together.</li>
     
 </ul>
 
 <p>What about efficiency?</p>
 <ul>
-<li>The number of 'zip up' applications required is ceil(log_2(n)) where n is the number of pieces.</li>
+<li>The number of zip-up applications required is ceil(log_2(n)) where n is the number of pieces.</li>
 
 
-<li>Constructing the C matrix does require us to check every entry of a large matrix, whose size is unknown before execution. <i>However</i>,the size of this matrix does NOT seem to explode, in practice, because the curse of dimensionality is balanced out somewhat by the decreasing amount of space in the grid as we add more pieces to the configurations.</li>
+<li>Constructing the C matrix does require us to check every entry of a large matrix, whose size is unknown before execution. However,the size of this matrix does <i>not</i> seem to explode, in practice, because the curse of dimensionality is balanced out somewhat by the decreasing amount of space in the grid as we add more pieces to the configurations.</li>
 
 
 </ul>

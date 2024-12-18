@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romy Williamson</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="../images/icon2.png" type="image/png">
+    <style>
+     .image-container {
+            position: relative;
+            width: 100px; /* Set the width you need */
+            height: auto;
+            display: flex;
+            justify-content: center; /* Centers horizontally */
+            align-items: center;     /* Centers vertically */
+            margin: 0 auto; /* Centers the container on the page */
+        }
+        
+     .normal-image {
+ display: block;
+            width: 100%;
+            height: auto;
+            
+        }
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+
+<div id="navbar"></div>
+<script src="fetch-navbar.js"></script>
+<body>
+
+<hr>
+<header><h1>I Ruined a Wooden Puzzle</h1></header>
+<hr>
+<div class="defaultpage">
+
+
+
+
+<h2>Problem</h2>
+<p>Slide and rotate the following pieces (on the left) into the 'room' (on the right), through the 'door' (bottom left of the 'room'). The puzzle is effectively 2D, except that we are allowed to flip the pieces (this provides extra degrees of freedom compared to rotations and translations only, because some of the pieces are <a href="https://en.wikipedia.org/wiki/Chirality_(mathematics)">chiral</a>).</p>
+<p>If you want to solve the puzzle intuitively, reading this page won't actually ruin it, but as a disclaimer: the <a href="https://colab.research.google.com/drive/1trDkfvYeXnnlHbvCnlEhDVizRqYwui06">ipython notebook</a> does show the solution.</p>
+<div class="image_container">
+<img src="../images/puzzle_setup.png" alt="Puzzle Setup" class="normal-image">
+</div>
+
+<h2>Solution Approach</h2>
+<p>Initially it seems like you would need to model complicated processes like continuous sliding. This would be hard. A much simpler problem is to find all options for the final configurations of the pieces. It turns out that if we find all possible configurations and then filter out those which obviously can't be 'slidable', we are left with only two final configurations. Then it is very intuitive for a human to complete the final step by finding the only 'sliding' solution.</p>
+<p>The fact that the simple 'filtering' approach works so well is quite lucky. This part would need more thought in order to scale well.</p>
+<p>However, while solving this puzzle I discovered a very efficient process for finding all the possible configurations. It's <i>this</i> part that I'd like to explain in detail. The method is quite general so it could be easily adapted to dimensions other than 2, and I think there's potential to include different constraints on how the pieces can fit together (maybe, jigsaw-like pieces?).</p>
+
+<h2>Finding Configurations</h2>
+<ul>
+    <li>Represent each piece by a binary matrix, e.g. A = np.array([[1,1,1],
+              [0,1,0]]) for the T-shaped tetris piece.</li>
+    <li>For each piece, find all its possible positions in the h x w grid. Each position is encoded by a length hxw binary <i>configuration vector</i>, formed by flattening the h x w grid. For example, this configuration of piece A:
+    \[ \left ( \begin{matrix}
+    0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 1 & 1 & 1 & 0 \\
+    0 & 0 & 0 & 1 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 \\
+    
+    \end{matrix} \right ) \] would be encoded by this configuration vector: \[ \left ( \begin{matrix} 0 & 0 & 0 & 0 & 0 & 0 & \quad  0 & 0 & 1 & 1 & 1 & 0 \quad & 0 & 0 & 0 & 1 & 0 & 0 \quad & 0 & 0 & 0 & 0 & 0 & 0 \end{matrix} \right ) .\]
+    
+    
+     All the valid configurations are encoded by a ?x(hxw) <i>configuration matrix</i>, formed by stacking the configurations vectors. The value of ? depends on both the type of piece and the grid.</li>
+    
+    <li>Define a <i>zip-up</i> function, that takes two configuration matrices, A and B, and returns a configuration matrix, C, for the composition of the two pieces:
+        <ul>
+        <li>Find the product AB^T. </li>
+        <li>Each entry of AB^T counts the number of overlapping squares in the corresponding piece configurations (encoded by the rows of A and B). In particular, it is zero exactly when the piece configurations do NOT overlap. </li>
+        <li>Check every entry of AB^T. For every zero-entry, add a row to C that encodes the composition of the pieces in that configuration - i.e. A[i,:] + B[j,:].</li>
+        <li>Now C has a similar structure to A and B but represents all possible configurations of a <i>pair</i> of pieces.</li>
+        </ul>
+    </li>
+    
+    <li>The zip-up function does most of the work for us. To find all joint configurations of more than two pieces, we just need to apply it repeatedly to eventually join all of the pieces together.</li>
+    
+</ul>
+
+<p>What about efficiency?</p>
+<ul>
+<li>The number of zip-up applications required is ceil(log_2(n)) where n is the number of pieces.</li>
+
+
+<li>Constructing the C matrix does require us to check every entry of a large matrix, whose size is unknown before execution. However,the size of this matrix does <i>not</i> seem to explode, in practice, because the curse of dimensionality is balanced out somewhat by the decreasing amount of space in the grid as we add more pieces to the configurations.</li>
+
+
+</ul>
+
+
+<h2>Filtering Out Non-Slidable Solutions</h2>
+<p>The remarkably simple filtering system that I used was: </p>
+<ul>
+<li>Does at least one piece on the final configuration have enough space around it that it can slide in at least one of the four directions?
+<ul>
+<li>No: discard. (If you can't get out of a configuration, you can't get into a configuration.)</li>
+<li>Yes: is at least one piece still movable if we remove that piece?
+<ul>
+<li>No: discard.</li>
+<li>Yes: keep this configuration.</li>
+</ul></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+<h2>Conclusion</h2>
+<p>That's all. I have made it into an <a href="https://colab.research.google.com/drive/1trDkfvYeXnnlHbvCnlEhDVizRqYwui06">ipython notebook</a>, so you can try it on different starting pieces and grids. :)</p>
+
+</div>
+
+<hr>
+<div class="footer-container">
+    <img src="../images/logos.png" alt="Footer Images" >
+    <canvas id="canvas"></canvas>
+</div>
+
+</body>
+
+<script>
+    function toggleMenu() {
+      const navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('active');
+    }
+</script>
+
+<!-- Links to the external JavaScript files -->
+<script src="egg.js"></script>
+
+<script src="egg-check.js"></script>
+
+
+</html>
+
+

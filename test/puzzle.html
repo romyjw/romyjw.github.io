@@ -49,7 +49,7 @@
 </div>
 
 <h2>Solution Approach</h2>
-<p>Initially it seems like you would need to model complicated processes like continuous sliding. This would be hard. A much simpler problem is to find all options for the final configurations of the pieces. It turns out that if we find all possible configurations and then filter out those which obviously can't be 'slidable', we are left with only two final configurations. Then it is very intuitive for a human to complete the final step by finding the only 'sliding' solution.</p>
+<p>Initially it seems like you would need to model complicated processes like continuous sliding. This would be hard. A much simpler problem is to find all options for the final configurations of the pieces. It turns out that if we find all possible configurations and then filter out those which obviously can't be 'slidable', we are left with only three final configurations (for this particular setup). Then it is very intuitive for a human to complete the final step by finding the only 'sliding' solution.</p>
 <p>The fact that the simple 'filtering' approach works so well is quite lucky. This part would need more thought in order to scale well.</p>
 <p>However, while solving this puzzle I discovered a very efficient process for finding all the possible configurations. It's <i>this</i> part that I'd like to explain in detail. The method is quite general so it could be easily adapted to dimensions other than 2, and I think there's potential to include different constraints on how the pieces can fit together (maybe, jigsaw-like pieces?).</p>
 

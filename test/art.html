@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Gallery of Art and Mistakes</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="../images/icon2.png" type="image/png">
+  <style>
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      padding: 20px;
+    }
+
+
+
+
+.gallery-item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Makes the box square */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9; /* Light gray for whitespace */
+  overflow: hidden; /* Ensure anything outside the box is hidden */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.gallery-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensures the image fits inside without cropping */
+}
+
+
+    .gallery-item .image-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      font-size: 14px;
+      text-align: center;
+      padding: 5px 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .gallery-item:hover .image-title {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+
+<div id="navbar"></div>
+<script src="fetch-navbar.js"></script>
+<body>
+
+
+<hr>
+<header><h1>The Gallery of Art and Mistakes</h1></header>
+
+<hr>
+<div class="defaultpage">
+
+  <p>Thank you to <a href="https://www.morenap.ca/">Morena Protti</a> for the amazing frog mesh.<p>
+  <div class="gallery">
+  
+  
+  
+  
+      <div class="gallery-item">
+      <img src="../resources/art/File 33.png" alt="File 33">
+      <div class="image-title"><b><i>Jupiter Frog Ball, </i></b>01.2025</div>
+    </div>
+    
+
+            <div class="gallery-item">
+      <img src="../resources/art/File 38.png" alt="File 33">
+      <div class="image-title"><b><i>Anime Swordsman, </i></b>unknown period</div>
+    </div>
+    
+    <div class="gallery-item">
+      <img src="../resources/art/File 34.png" alt="File 33">
+      <div class="image-title"><b><i>Hot Frog, </i></b>01.2025</div>
+    </div>
+
+    
+    <div class="gallery-item">
+      <img src="../resources/art/File 36.png" alt="File 33">
+      <div class="image-title"><b><i>Frog Compilation, </i></b>01.2025</div>
+    </div>
+            <div class="gallery-item">
+      <img src="../resources/art/File 1.png" alt="File 1">
+      <div class="image-title"><b><i>Modesty, </i></b>16.05.2024</div>
+    </div>
+    
+        <div class="gallery-item">
+      <img src="../resources/art/File 37.png" alt="File 33">
+      <div class="image-title"><b><i>Dave Bautista, </i></b>2024?<br>(A Homotopy from Max Planck to the Sphere)</div>
+    </div>
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    <div class="gallery-item">
+      <img src="../resources/art/File 6.png" alt="File 2">
+      <div class="image-title"><b><i>The Convergence of Perception, </i></b>14.07.2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 5.png" alt="File 3">
+      <div class="image-title"><b><i>Jurassic Dreamscape, </i></b>14.07.2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 4.png" alt="File 4">
+      <div class="image-title"><b><i>Frogs in a Surreal Continuum, </i></b>14.07.2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 2.png" alt="File 5">
+      <div class="image-title"><b><i>Zebra Ball, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 3.png" alt="File 6">
+      <div class="image-title"><b><i>Hypnosis, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 7.png" alt="File 7">
+      <div class="image-title"><b><i>Rainbow Ghost Man, </i></b>15.05.2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 8.png" alt="File 8">
+      <div class="image-title"><b><i>Mannequin in Corset & Disembodied Limbs, </i></b>15.05.2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 9.png" alt="File 9">
+      <div class="image-title"><b><i>Cool Spiky See-Through, </i></b>13.05.2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 10.png" alt="File 10">
+      <div class="image-title"><b><i>Retro Camera, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 11.png" alt="File 11">
+      <div class="image-title"><b><i>Coke Bottle Angel, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 12.png" alt="File 12">
+      <div class="image-title"><b><i>Oil Slick, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 13.png" alt="File 13">
+      <div class="image-title"><b><i>Laser Man One, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 14.png" alt="File 14">
+      <div class="image-title"><b><i>Anthony Gormley People, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 15.png" alt="File 15">
+      <div class="image-title"><b><i>Laplacian Tapestry, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 16.png" alt="File 16">
+      <div class="image-title"><b><i>Blood Vessels, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 17.png" alt="File 17">
+      <div class="image-title"><b><i>Fairy Face, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 18.png" alt="File 18">
+      <div class="image-title"><b><i>Barycentric Confusion 2, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 19.png" alt="File 19">
+      <div class="image-title"><b><i>Barycentric Confusion 1, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 20.png" alt="File 20">
+      <div class="image-title"><b><i>Max Planck in Picasso Style, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 21.png" alt="File 21">
+      <div class="image-title"><b><i>Unrideable Horse, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 22.png" alt="File 22">
+      <div class="image-title"><b><i>Faceless Igea, </i></b>2024</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="../resources/art/File 24.png" alt="File 24">
+      <div class="image-title"><b><i>Stretchy Man One, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 25.png" alt="File 25">
+      <div class="image-title"><b><i>Stretchy Man Pose, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 26.png" alt="File 26">
+      <div class="image-title"><b><i>Stretchy Man Zen, </i></b>2024</div>
+    </div>
+    
+    
+            <div class="gallery-item">
+      <img src="../resources/art/File 35.png" alt="File 33">
+      <div class="image-title"><b><i>Frog in a Tutu, </i></b>18.05.2024</div>
+    </div>
+    
+    
+    
+    <div class="gallery-item">
+      <img src="../resources/art/File 27.png" alt="File 27">
+      <div class="image-title"><b><i>Cancerous Sweet Wrapper, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 28.png" alt="File 28">
+      <div class="image-title"><b><i>Butterflies and Flowers, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 29.png" alt="File 29">
+      <div class="image-title"><b><i>Eigenfunction Dodecahedron, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 30.png" alt="File 30">
+      <div class="image-title"><b><i>Bumpy Eigenfunctions, </i></b>2024</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 31.png" alt="File 31">
+      <div class="image-title"><b><i>The Invisible Man by H.G. Wells, </i></b>2023</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../resources/art/File 32.jpeg" alt="File 32">
+      <div class="image-title"><b><i>ET, </i></b>circa 2018<br>(sustained some water damage)</div>
+    </div>
+    
+
+    
+  </div>
+
+
+
+
+
+
+</div>
+
+<hr>
+<div class="footer-container">
+    <img src="../images/logos.png" alt="Footer Images" >
+    <canvas id="canvas"></canvas>
+</div>
+
+</body>
+
+<script>
+    function toggleMenu() {
+      const navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('active');
+    }
+</script>
+
+<!-- Links to the external JavaScript files -->
+<script src="egg.js"></script>
+
+<script src="egg-check.js"></script>
+
+
+</html>

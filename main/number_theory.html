@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romy Williamson</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="../images/icon2.png" type="image/png">
+
+</head>
+
+
+<div id="navbar"></div>
+<script src="fetch-navbar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<body>
+
+<hr>
+<header><h1>Physical Number Theory</h1></header>
+<hr>
+<div class="defaultpage">
+<p>By 'Physical Number Theory', I am referring to ways of visualising number theory, by imagining physical objects. This is interesting to me because I think best by visualisation, and I love to make the abstract concrete. Although intuition can be misleading, and visualisation is no substitute for formal proof, there is almost always something to be gained by finding a new visualisation/ thought experiment to demonstrate a seemingly abstract concept.</p>
+
+
+<h2>Fermat's Little Theorem With Bracelets</h2>
+<p>My favourite proof of Fermat's Little Theorem is one of these cases where quite an abstract concept becomes almost self-evident when viewed from a certain perspective.</p>
+<p>Because the proof is so intuitive, I don't think you even need to know the theorem to follow it. The proof goes like this:</p>
+<ul>
+<li>Imagine that you have an unlimited supply of beads, coming in A different colours . You want to design bracelets with \(p\) beads each (where \(p\) is a prime).</li>
+<li>Now ask, how many different bead-strings can you make? The answer is \(a^p\), because there are \(a\) options for the colour of each of the \(p\) beads, and the order matters. But, if the ends are joined up (seamlessly) to make bracelets then many of these will end up looking the same.</li>
+<li>Clearly, there are just \(a\) bead-strings that use only one colour, because there are \(a\) colours available.</li>
+<li>For a bracelet design using more than one colour, there are exactly \(p\) different bead-strings that can produce it, because the first bead could be taken to be any of the \(p\) beads, and because \(p\) is prime, there can't be any repeated patterns in the bracelet so these \(p\) bead-strings are all genuinely different.</li>
+
+<li>Therefore, the number of bead-strings using more than one colour is \(a^p-a\), and this is a multiple of \(p\).</li>
+<li>So, \(p\) divides \(a^p-a\), so \(a^p =a\;\text{mod}\;p\). This proves the theorem. :)</li>
+</ul>
+
+
+
+
+<h2>Proof Without Words: Nicomachus' Theorem</h2>
+
+<img src="../images/sumsofcubes.png" alt="Nicomachus Theorem" >
+<p>\[  \text{For example:}\;\;2025 = 1^3+2^3+ ... + 9^3 = (1+2+...+9)^2   \]</p>
+
+
+
+
+<h2>Chinese Remainder Theorem via Soldiers on Parade</h2>
+<p>The Chinese Remainder Theorem can be stated as:</p>
+<p>If \( a_1,a_2,...,a_n \) are pairwise coprime (each pair shares no common factors except 1), and we know \(N \text{mod}a_i  \) for all the \( a_i\), then \( N\) is uniquely determined, modulo the product \( a_1 a_2 ... a_n  \). </p>
+
+<p>A nice way to interpret this result is to imagine that there are \( N \) soldiers standing in a parade ground. Imagine that there are too many soldiers to easily count, but they are highly disciplined and we can order them to stand in different formations. If we order them to stand in ranks of \( a_1,a_2,...,a_n  \) each in turn then the number of left over soldiers is the value of \( N \; \text{mod} \; a_i \). </p>
+<p>The theorem tells us that, as long as the \( a_i\) are pairwise coprime, we have enough information to deduce the value of \( N \) modulo \( a_1 a_2 ... a_n  \). In practical terms, we should choose the \( a_i\) such that their product is obviously much larger than \( N \) - and then we will know the number of soldiers <i>exactly</i>.</p>
+<p>Some proofs of the theorem are actually constructive - they provide a formula for \(N \; \text{mod} \; a_1 a_2...a_n \) in terms of the \(a_i \) and the \( N \; \text{mod} \; a_i \). So it's possible that this could really be of practical use.</p>
+
+
+
+<h2>Chinese Remainder Theorem via Cogs</h2>
+<p>A more general version of the Chinese Remainder Theorem statement is about isomorphisms, not about solving a list of congruence equations.</p>
+<p>I like to imagine cogs. The idea is that, if we have \(n\) connected cogs ticking around, and the number of teeth, \( a_i\), on each cog is coprime, then eventually ALL of the possible teeth configurations will be reached.</p>
+<p>This is the same as saying that the Cartesian product of the cyclic groups with coprime sizes \( a_i \) is isomorphic to the big cyclic group with size equal to the product of the sizes, \( a_1 a_2... a_n \).</p>
+<!-- Add an image here, of cogs. -->
+
+
+<h2>Cicadas</h2>
+<p>A blog post about physical manifestations of number theory would not be complete without mentioning the lifecycles of competing species of Cicadas in North America. Long story short, Cicadas lie dormant most of the time and only come out to reproduce. According to <a href="https://cicadas.uconn.edu/general_information/">University of Connecticut</a>, there are seven species — four with 13-year life cycles and three with 17-year cycles. The theory is that nature chose these lifecycles because on average, prime number lifecycles are least likely to line up with the lifecycles of other animals (and lifecycles lining up might mean too much competition for resources).</p>
+<p>2024 was a special year for the periodic cicadas, because two species (a 13-year and a 17-year variety) emerged simultaneously, for the first time since 1803. Read more <a href="https://www.bbc.com/future/article/20240501-cicada-dual-emergence-brings-chaos-to-the-food-chain">here</a>.</p>
+
+
+
+</div>
+
+<hr>
+<div class="footer-container">
+    <img src="../images/logos.png" alt="Footer Images" >
+    <canvas id="canvas"></canvas>
+</div>
+
+</body>
+
+<script>
+    function toggleMenu() {
+      const navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('active');
+    }
+</script>
+
+<!-- Links to the external JavaScript files -->
+<script src="egg.js"></script>
+
+<script src="egg-check.js"></script>
+
+
+</html>
+
+

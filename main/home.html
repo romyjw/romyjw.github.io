@@ -9,7 +9,7 @@
     <style>
         .image-container {
             position: relative;
-            width: 300px; /* Set the width you need */
+            width: 400px; /* Set the width you need */
             height: auto;
             display: flex;
             justify-content: center; /* Centers horizontally */
@@ -40,14 +40,55 @@
         .image-container:hover .default-image {
             opacity: 1;
         }
+        
+        
+        
+        
+        
+        
+               .marquee {
+            position: absolute;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: scroll 10s linear infinite;
+        }
+        @keyframes scroll {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+        .banner {
+            padding:0px;
+            font-size: 14pt;
+            font-weight: bold;
+            text-align: center;
+            background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+
     </style>
+
+
 </head>
 
 <body>
     <div id="navbar"></div>
     <script src="fetch-navbar.js"></script>
-
     <hr>
+   
+    <!--<div class="marquee">
+     <a href="https://www.neurodiversityweek.com/"><div class="banner">It's Neurodiversity Celebration Week! 17 - 23 March 2025</div></a></div>
+      <br>
+    <hr>-->
+    
+    
     <header><h1>Home</h1></header>
     <hr>
     <div class="defaultpage">
@@ -61,6 +102,8 @@
 
         <p>Email: <a href="mailto:romy.williamson.22@ucl.ac.uk">romy.williamson.22@ucl.ac.uk</a></p>
     </div>
+    <hr>
+    <a href="https://www.neurodiversityweek.com/"><div class="banner">It's Neurodiversity Celebration Week! 17 - 23 March 2025</div></a></div>
 
     <hr>
     <div class="footer-container">

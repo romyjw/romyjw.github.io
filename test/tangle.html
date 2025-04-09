@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romy Williamson</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="../images/icon2.png" type="image/png">
+
+</head>
+
+
+<div id="navbar"></div>
+<script src="fetch-navbar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<body>
+
+<hr>
+<header><h1>What is the Torsion of a Tangle Toy?</h1></header>
+<hr>
+<div class="defaultpage">
+<p>Tangle toys are a popular fidget toy. The standard model is made from 22 quarter circles that clip together at joints that rotate 360 degrees (but do not `bend'). They are quite satisfying to twist and turn and wrap around your fingers, especially if you're a tactile sort of autistic person. But they also represent a reasonably interesting subspace of embedded curves in \( \mathbb{R}^3 \).</p>
+<p>This subspace of embedded curves is 22-dimensional - one degree of freedom per joint - assuming that we don't disconnect/reconnect any pieces. That is enough to allow you to make quite a variety of curves, and all the curves are smooth-looking (unlike a polyline) because the limit of the tangents agree on either side of all the joints.</p>
+<p>But exactly how smooth are these curves? What is the torsion at each point? What does the TNB frame look like?</p>
+<p>The tangent is easy. You just fin the tangent of the current circle.</p>
+<p>The normal is also quite easy - we know that the normal to a circular curve embedded in \( \mathbb{R}^3 \) is perpendicular to the plane of the circle, and we find its orientation using the right-hand rule. But then, we quickly see that the normal is not continuous! Because the plane of the circle can change abruptly when we cross a joint.</p>
+<p>The same goes for the binormal - which is perpendicular to both the tangent and the normal.</p>
+<p>The osculating circles are just the extensions of the quarter-circles. Since all the quarter-circles have the same radius, then the curvature is constant.</p>
+<p>Therefore, the `tangle-toy' curves have quite a special property: the curvature is constant but the torsion is not even well-defined.</p>
+</div>
+
+<hr>
+<div class="footer-container">
+    <img src="../images/logos.png" alt="Footer Images" >
+    <canvas id="canvas"></canvas>
+</div>
+
+</body>
+
+<script>
+    function toggleMenu() {
+      const navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('active');
+    }
+</script>
+
+<!-- Links to the external JavaScript files -->
+<script src="egg.js"></script>
+
+<script src="egg-check.js"></script>
+
+
+</html>
+
+

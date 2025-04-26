@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romy Williamson</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="../images/icon2.png" type="image/png">
+
+</head>
+
+
+<div id="navbar"></div>
+<script src="fetch-navbar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<body>
+
+<hr>
+<header><h1>A Serendipitous Stellated Icosahedron</h1></header>
+<hr>
+<div class="defaultpage">
+<p>I am a huge enthusiast for &mdash; to avoid using any brand names here &mdash; `magnetic sticks and balls'. I always liked these while I was growing up. Then, when I was studying Topology in 2nd year maths, I saw Simplicial Complexes for the first time and I was instantly reminded of the toy. So I bought myself a small set for my desk. And a matching set for my sister (a fellow topology enthusiast). Then I wasn't satisfied with making only <i>half</i> a stellated icosahedron, so I extended the collection further... </p>
+<p>One of the best things about my recent visit to the Mathematische Forschunginstitute Oberwolfach, was that there were enough magnets to build <i>two huge conjoined stellated icosahedra</i>.</p>
+<img src="../images/mfo_geomag.jpeg" alt="MFO Magnets", style="width: 300px" >
+
+<p>My PhD supervisor Niloy has further fuelled my addiction by allowing me to purchase a 668-piece set on eBay, "for the lab". I want to build as many of the <a href="https://en.wikipedia.org/wiki/Archimedean_solid" target="blank">Archimidean Solids</a> as possible. The ones with octagons and decagons pose a structural challenge.</p>
+<div style="display: flex; gap: 10px;">
+  <img src="../images/snub_dodecahedron.jpeg" alt="" style="width: 200px">
+  <img src="../images/geomag_stacked.jpeg" alt="" style="width: 200px">
+  <img src="../images/truncated_icosahedron.jpeg" alt="" style="width: 200px">
+</div>
+
+<p>At one point, I thought that I had just about exhausted the list geometrically interesting models I could actually make with the miniature desktop set. Then I was idly modifying my stellated icosahedron (possibly my favourite shape to make) and to my surprise I found that I had made... a regular dodecahedron? Sure, I know that the regular dodecahedron is the dual of an icosahedron, but I could not see any particular reason why the points of the icosahedron's `stellation' spikes should be separated by exactly the length of one magnet.</p>
+
+<div style="display: flex; gap: 10px;">
+  <img src="../images/stellated_icos.jpeg" alt="" style="height: 200px; width: auto;">
+  <img src="../images/semi_dodeca.jpeg" alt="" style="height: 200px; width: auto;">
+  <img src="../images/dodecahedron.jpeg" alt="" style="height: 200px; width: auto;">
+</div>
+
+
+<p>After one very distracted day when I kept playing with this on my desk instead of doing my actual research, I realised that this construction of a dodecahedron from a stellated icosahedron is only possible because certain sets of edges form pentagrams. And this is only possible because the ratio between the lengths of the two brands of `stick' is <i>more or less exactly*</i> the Golden Ratio, \(\phi = \frac{1+ \sqrt{5}}{2}\)!**</p>
+<p>So I will call the base shape, a `Serendipitous Stellated Icosahedron'.</p>
+<div style="display: flex; gap: 10px;">
+<img src="../images/deconstructed.jpeg" alt="", style="height: 200px" >
+<img src="../images/penta.jpeg" alt="", style="height: 200px" >
+</div>
+<p><i>*More or less exactly</i> is not a strictly mathematical caveat, unlike similar phrases such as <i>almost everywhere</i>. I just mean that it's close enough to make the model so that it a) looks good if you don't look too close, and b) doesn't fall apart.</p>
+<p>**The exclamation mark indicates excitement and surprise; it does not represent anything to do with factorials or gamma functions.</p>
+
+<p>Apologies if you associate pentagrams with witchcraft or something, and you don't like that. Here is a proof that the ratio of the lengths in question must be \(\phi\).</p>
+<img src="../images/proof.jpeg" alt="", style="width: 800px" >
+</div>
+
+<hr>
+<div class="footer-container">
+    <img src="../images/logos.png" alt="Footer Images" >
+    <canvas id="canvas"></canvas>
+</div>
+
+</body>
+
+<script>
+    function toggleMenu() {
+      const navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('active');
+    }
+</script>
+
+<!-- Links to the external JavaScript files -->
+<script src="egg.js"></script>
+
+<script src="egg-check.js"></script>
+
+
+</html>
+
+

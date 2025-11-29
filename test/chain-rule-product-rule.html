@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romy Williamson</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="../images/icon2.png" type="image/png">
+
+</head>
+
+
+<div id="navbar"></div>
+<script src="fetch-navbar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<body>
+
+<hr>
+<header><h1>Chain Rule and Product Rule</h1></header>
+<hr>
+<div class="defaultpage">
+<p>The product rule is very easy to understand if you look at it visually. Imagine a 2d rectangle that grows at different rates in each direction. To get the rate of change of area you need to add up the rate of change of width and the rate of change of height, appropriately scaled. The corner part disappears in the limit.</p>
+
+<p>The chain rule is also easy to understand visually. Imagine that I travel at varying speed in one direction along a curve parametrised by arclength, p(d), so that my total distance travelled at time t is d. i.e. my position at time t is p(d(t)). What is my velocity at time t? Well, the rate of change of position wrt distance is p'(d). But this needs to be scaled by how fast the distance is changing, which is d'(t). </p>
+<p>Alternatively, imagine a graph on xy axes. y'(x) is the infinitesimal rise-over-run. i.e. the tangent of the angle of the little triangle. If x is actually a function of t, and we rescale the bottom axis to t instead of x, then the 'run' lengths are all stretched out by t'(x). So the rise-over-run is multiplied by 1/t'(x), or x'(t) equivalently. So that's where the end term comes in.</p>
+</div>
+
+<hr>
+<div class="footer-container">
+    <img src="../images/logos.png" alt="Footer Images" >
+    <canvas id="canvas"></canvas>
+</div>
+
+</body>
+
+<script>
+    function toggleMenu() {
+      const navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('active');
+    }
+</script>
+
+<!-- Links to the external JavaScript files -->
+<script src="egg.js"></script>
+
+<script src="egg-check.js"></script>
+
+
+</html>
+
+

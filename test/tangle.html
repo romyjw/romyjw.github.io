@@ -19,14 +19,27 @@
 <header><h1>What is the Torsion of a Tangle Toy?</h1></header>
 <hr>
 <div class="defaultpage">
-<p>Tangle toys are a popular fidget toy. The standard model is made from 22 quarter circles that clip together at joints that rotate 360 degrees (but do not `bend'). They are quite satisfying to twist and turn and wrap around your fingers, especially if you're a tactile sort of autistic person. But they also represent a reasonably interesting subspace of embedded curves in \( \mathbb{R}^3 \).</p>
-<p>This subspace of embedded curves is 22-dimensional - one degree of freedom per joint - assuming that we don't disconnect/reconnect any pieces. That is enough to allow you to make quite a variety of curves, and all the curves are smooth-looking (unlike a polyline) because the limit of the tangents agree on either side of all the joints.</p>
-<p>But exactly how smooth are these curves? What is the torsion at each point? What does the TNB frame look like?</p>
-<p>The tangent is easy. You just find the tangent of the current circle.</p>
-<p>The normal is also quite easy - we know that the normal to a circular curve embedded in \( \mathbb{R}^3 \) is perpendicular to the plane of the circle, and we find its orientation using the right-hand rule. But then, we quickly see that the normal is not continuous! Because the plane of the circle can change abruptly when we cross a joint.</p>
+<p>Tangle toys are a popular fidget toy. The standard model is made from 18 quarter circles that clip together at joints that rotate 360 degrees (but do not `bend'). They are super satisfying to twist and turn and wrap around your fingers. (Any other neurodivergent people out here?) But they also represent a reasonably interesting subspace of embedded curves in \( \mathbb{R}^3 \).</p>
+<p>This subspace of embedded curves with one fixed end (and the other end disconnected) is 18-dimensional - one degree of freedom per joint. That is enough to allow you to make quite a variety of curves, and all the curves are smooth-looking (unlike a 'join-the-dots' polyline) because the tangents agree on either side of all the joints.</p>
+
+<p>Most differential geometry courses will start with a section about curves embedded in \( \mathbb{R}^3 \). The standard approach is to assume that a curve is `sufficiently smooth' or \( C_\inf \), and then analyse it by computing curvature, torsion (twisting), tangents, normals and binormals (a `TNB' frame).</p>
+<p>How smooth are these curves? What is the torsion at each point? What does the TNB frame look like?</p>
+
+<p>Consider the 'tangle' to be arc-length parametrised as p(s).</p>
+<p>The tangent is easy. p'(s) just gives the unit tangent on the current circular arc. It's unit-length, by the arc-length parametrisation assumption.</p>
+<p>The normal is also quite easy. p''(s) points towards the centre of each circular arc. But then, we quickly see that the normal is not continuous! Because the plane of the circle can change abruptly when we cross a joint.</p>
 <p>The same goes for the binormal - which is perpendicular to both the tangent and the normal.</p>
 <p>The osculating circles are just the extensions of the quarter-circles. Since all the quarter-circles have the same radius, then the curvature is constant.</p>
-<p>Therefore, the `tangle-toy' curves have quite a special property: the curvature is constant but the torsion is not even well-defined.</p>
+<p>Since the normals all lie in a the same plane, per quarter circle, then the derivative of the normal is also entirely in the plane. From the Frenet-Serret formulas, that implies that the torsion is zero - except at the join between quarter-circles, where the normal, binormal and torsion are all undefined.</p>
+<p>Therefore, we can classify the `tangle-toy' curves as having constant curvature but torsion is not even well-defined.</p>
+
+<p>My reflection on this is that quite a lot of curves we are interested in, especially man-made ones, are not `sufficiently smooth' for the Frenet Serret Apparatus even if they look smooth-ish to the eye.</p>
+
+
+<p>Actually, tangle toys usually have the ends connected. What does this space of curves look like? </p>
+<p>In Chapter 8 of Physical Simulation Notes (Etienne Vouga), the author talks about constraints and non-euclidean configuration spaces. It is explained that "if g : Rn → Rk is a smooth function and v ∈ Rk is a regular value of g, that is, the v level set of g contains no critical points. Then the level set S = g−1(v) is a n − k-dimensional manifold ". This is exactly the result we need. R18 is the space of unjoined tangles. Let g return a 2d vector consisting of the distance and the angle between the start and end sections. Let v = (0,0). As long as we can show that g is smooth and v is a regular value of g, we can conclude that S=g^-1(v) is an 16-dimensional manifold. S is exactly the space of closed-tangles.</p>
+<p>Why is g smooth? (or can we replace it with something smooth... )</p>
+<p>Why is v=(0,0) a regular value of g?</p>
 </div>
 
 <hr>

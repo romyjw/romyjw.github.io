@@ -33,8 +33,8 @@ let WR = 50;  // Wheel radius
 let W1X = -200;
 let Y = canvas.height + 100;
 let b = 0;
-let speed = pi * 2 * WR * 0.02;
-let spokeRotationSpeed = pi/45
+let speed = pi * 2 * WR * 0.01;
+let spokeRotationSpeed = pi/90
 let pedalRotationSpeed = spokeRotationSpeed / 1
 let spokeRotationAngle = 0; // Angle to rotate the spokes
 
